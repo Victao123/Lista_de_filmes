@@ -10,8 +10,8 @@ const movieListContainer = document.getElementById("movie-list");
 
 let movieList = JSON.parse(localStorage.getItem("movieList")) ?? [];
 async function searchButtonClickHandler() {
-try{    let url = `http://www.omdbapi.com/?apikey=${'1c0c6d6b'}&t=${movieNameParameterGenerator()}${movieYearParameterGenerator()}`;
-const response = await fetch(url);
+try{    let url = `https://www.omdbapi.com/?apikey=${'1c0c6d6b'}&t=${movieNameParameterGenerator()}${movieYearParameterGenerator()}`;
+const response = await fetch(`https://www.omdbapi.com/?apikey=${'1c0c6d6b'}&t=${movieNameParameterGenerator()}${movieYearParameterGenerator()}`);
 const data = await response.json();
 console.log("data: ", data);
 if(data.Error){
